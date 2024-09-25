@@ -1,16 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donetion</title>
+
+    <link rel="stylesheet" href="./style/style.css">
+    
+    <!-- daisyui and tailwind cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
     <header>
+        <nav class="nav-container">
+            <ul class="nav-item max-w-5xl mx-auto">
+                <li><a href="./blog.html"><button class="blog-btn">Blog</button></a></li>
 
+                <li class="brand">
+                    <img src="./assets/logo.png" alt="">
+                    <p>Donate Bangladesh</p>
+                </li>
+
+                <li class="donate">
+                    <img src="./assets/coin.png" alt="">
+                    <p><span id="availableBalance">5500</span> BDT</p>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
-        
+        <section class="buttons-container max-w-5xl mx-auto flex justify-center items-center mb-6">
+            <button id="donationButton" class="active-btn">Donation</button>
+            <button id="historyButton" class="inactive-btn">History</button>
+        </section>
+
+        <!-- donation section -->
+        <section id="donationSection" class="cart-container">
+
+            <!-- First Cart -->
+            <div class="cart max-w-5xl mx-auto mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 border border-[#E9E9E9] rounded-2xl p-5 gap-6">
+                    <div>
+                        <img src="./assets/noakhali.png" alt="">
+                    </div>
+
+                    <div>  
+                        <button class="amount flex items-center justify-center gap-2">
+                            <img class="w-6" src="./assets/coin.png" alt="">
+                            <p><p class="donated-amount">0</p> BDT</p>
+                        </button>
+
+                        <h4 class="title text-xl font-bold py-4">Donate for <span>Flood at Noakhali, Bangladesh</span></h4>
+
+                        <p class="textt"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                        
+                        <input type="number" class="donation-amount w-full border border-zinc-300 py-2 px-2 my-4 rounded-md" placeholder="Write Donation Amount">
+
+                        <button class="donetion-btn">Donate Now</button>
+
+                        <input type="checkbox" id="confirmationModal1" class="modal-toggle" />
+                        <div class="modal">
+                            <div class="modal-box text-center items-center ">
+                                <h2 class="font-bold text-3xl">Congrates!</h2>
+                                <img class="inline-block p-4" src="./assets/coin.png" alt="">
+                                <p class="pb-4">You Have Donated for Humankind</p>
+                                <p class="font-bold">Successfully</p>
+                                <div class="modal-action flex justify-center">
+                                    <label for="confirmationModal1" class="btn">Close Confirmation</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Cart -->
+            <div class="cart max-w-5xl mx-auto mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 border border-[#E9E9E9] rounded-2xl p-5 gap-6">
+                    <div>
+                        <img src="./assets/feni.png" alt="">
+                    </div>
+
+                    <div>  
+                        <button class="amount flex items-center justify-center gap-2">
+                            <img class="w-6" src="./assets/coin.png" alt="">
+                            <p><p class="donated-amount">0</p> BDT</p>
+                        </button>
+
+                        <h4 class="text-xl font-bold py-4">Donate for <span>Flood Relief in Feni, Bangladesh</span></h4>
+
+                        <p class="textt"> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                    
+                        
+                        <input type="number" class="donation-amount w-full border border-zinc-300 py-2 px-2 my-4 rounded-md" placeholder="Write Donation Amount">
+
+                        <button class="donetion-btn">Donate Now</button>
+
+                        <input type="checkbox" id="confirmationModal2" class="modal-toggle" />
+                        <div class="modal">
+                            <div class="modal-box text-center items-center ">
+                                <h2 class="font-bold text-3xl">Congrates!</h2>
+                                <img class="inline-block p-4" src="./assets/coin.png" alt="">
+                                <p class="pb-4">You Have Donated for Humankind</p>
+                                <p class="font-bold">Successfully</p>
+                                <div class="modal-action flex justify-center">
+                                    <label for="confirmationModal2" class="btn">Close Confirmation</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Cart -->
+            <div class="cart max-w-5xl mx-auto mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 border border-[#E9E9E9] rounded-2xl p-5 gap-6">
+                    <div>
+                        <img src="./assets/quota-protest.png" alt="">
+                    </div>
+
+                    <div>  
+                        <button class="amount flex items-center justify-center gap-2">
+                            <img class="w-6" src="./assets/coin.png" alt="">
+                            <p><p class="donated-amount">0</p> BDT</p>
+                        </button>
+
+                        <h4 class="text-xl font-bold py-4"><span>Aid for Injured in the Quota Movement</span></h4>
+
+                        <p class="textt">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                        
+                        <input type="number" class="donation-amount w-full border border-zinc-300 py-2 px-2 my-4 rounded-md" placeholder="Write Donation Amount">
+
+                        <button class="donetion-btn">Donate Now</button>
+
+                        <input type="checkbox" id="confirmationModal3" class="modal-toggle" />
+                        <div class="modal">
+                            <div class="modal-box text-center items-center ">
+                                <h2 class="font-bold text-3xl">Congrates!</h2>
+                                <img class="inline-block p-4" src="./assets/coin.png" alt="">
+                                <p class="pb-4">You Have Donated for Humankind</p>
+                                <p class="font-bold">Successfully</p>
+                                <div class="modal-action flex justify-center">
+                                    <label for="confirmationModal3" class="btn">Close Confirmation</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- History Section -->
+        <div id="historySection">
+            <div id="historyContainer" class="max-w-5xl mx-auto mb-6 text-sm">
+                <!-- Donation history will be shown here -->
+            </div>
+        </div>
+
+    <footer>
+        <div class="h-32 bg-gray-100 mt-20"></div>
+    </footer>
+
     </main>
+
+    <script>
+        let donationHistory = [];
+
+        // Function to get the current date and time in Dhaka timezone
+        function getCurrentDateTime() {
+            const now = new Date();
+            return now.toLocaleString('en-GB', {
+                timeZone: 'Asia/Dhaka',
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+        }
+
+        // Donation logic when clicking "Donate Now"
+        function setupDonationHandlers() {
+            const carts = document.querySelectorAll('.cart');  
+            
+            carts.forEach((cart, index) => {
+                const donateNowButton = cart.querySelector('.donetion-btn'); 
+                const donationAmountInput = cart.querySelector('.donation-amount'); 
+                const donatedAmountElement = cart.querySelector('.donated-amount'); 
+
+                donateNowButton.addEventListener('click', function () {
+                const availableBalanceElement = document.getElementById('availableBalance');
+                let availableBalance = parseFloat(availableBalanceElement.innerText);
+
+                let donationAmount = parseFloat(donationAmountInput.value);
+                let donatedAmount = parseFloat(donatedAmountElement.innerText);
+
+                if (!isNaN(donationAmount) && donationAmount > 0 && donationAmount <= availableBalance) {
+                    donatedAmount += donationAmount;
+                    availableBalance -= donationAmount;
+
+                    // Update the displayed values
+                    donatedAmountElement.innerText = donatedAmount;
+                    availableBalanceElement.innerText = availableBalance;
+                    donationAmountInput.value = '';
+
+                    // Get the title/cause from the current cart
+                    let cause = cart.querySelector('span').innerText;
+
+                    // Add donation to history with the cause and full date
+                    donationHistory.push({
+                        amount: donationAmount,
+                        cause: cause,
+                        date: new Date().toString()
+                    });
+
+                   
+                    localStorage.setItem('donationHistory', JSON.stringify(donationHistory));
+    
+                    const modalId = `confirmationModal${index + 1}`;
+                    document.getElementById(modalId).checked = true;
+                } else {
+                    alert('Please enter a valid donation amount that does not exceed the available balance.');
+                }
+            });
+
+            });
+        }
+
+        // Function to show donation section and hide history section
+        function showDonation() {
+            document.getElementById('donationSection').style.display = 'block'; // Show Donation
+            document.getElementById('historySection').style.display = 'none'; // Hide History
+
+            document.getElementById('donationButton').classList.add('active-btn');
+            document.getElementById('donationButton').classList.remove('inactive-btn');
+            document.getElementById('historyButton').classList.add('inactive-btn');
+            document.getElementById('historyButton').classList.remove('active-btn');
+        }
+
+    // Function to show history section and hide donation section
+    function showHistory() {
+    document.getElementById('donationSection').style.display = 'none'; // Hide Donation
+    document.getElementById('historySection').style.display = 'block'; // Show History
+
+    
+    document.getElementById('historyButton').classList.add('active-btn');
+    document.getElementById('historyButton').classList.remove('inactive-btn');
+    document.getElementById('donationButton').classList.add('inactive-btn');
+    document.getElementById('donationButton').classList.remove('active-btn');
+
+    
+    const historyContainer = document.getElementById('historyContainer');
+    historyContainer.innerHTML = ''; 
+
+    // Check if there is any donation history
+    if (donationHistory.length > 0) {
+        donationHistory.forEach(function (record) {
+            
+            const historyCard = document.createElement('div');
+            historyCard.classList.add('cart', 'max-w-5xl', 'mx-auto', 'mb-6', 'border', 'rounded-md', 'p-4');
+            
+            historyCard.innerHTML = `
+                <h4 class="text-xl font-bold py-2">${record.amount} BDT Donated for ${record.cause}</h4>
+                <p class="text-sm text-gray-500">Date: ${record.date}</p>
+            `;
+
+           
+            historyContainer.appendChild(historyCard);
+        });
+    } else {
+        historyContainer.innerHTML = '<p>No donation history available.</p>';
+    }
+}
+
+
+        // Clear history on page refresh
+        window.onload = function () {
+            
+            localStorage.clear();
+
+            donationHistory = [];
+
+            showDonation();
+            setupDonationHandlers();
+        };
+
+        document.getElementById('donationButton').addEventListener('click', showDonation);
+        document.getElementById('historyButton').addEventListener('click', showHistory);
+    </script>
+
 </body>
 </html>
